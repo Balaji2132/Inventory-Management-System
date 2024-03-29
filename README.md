@@ -1,4 +1,5 @@
-This is an Inventory Management System Software (GUI) Java FX based.
+**This is a Java FX, MySQL, and Scene builder based Inventory Management System Web Application.**
+
 My inventory management system is connected to the MySQL database server.
 Authenticatiion, CRUD operations and fetching of the data are being performed on the GUI from the MySQL Server.
 I have attached inventory_Management.Sql script under both branches of my project
