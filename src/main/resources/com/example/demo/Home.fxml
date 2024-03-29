@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HomeController">
+    <padding>
+        <javafx.geometry.Insets top="20" right="10" bottom="20" left="10" />
+    </padding>
+    <Label text="Inventory Management Home Page" style="-fx-font-size: 24pt; -fx-font-weight: bold;" />
+    <Button fx:id="rawMaterialsButton" text="Raw Materials" onAction="#openRawMaterials" style="-fx-font-size: 18pt; -fx-background-color: #78ffd6; -fx-text-fill: #002633; -fx-padding: 15px 30px; -fx-background-radius: 20;" />
+    <Button fx:id="customersButton" text="Customers" onAction="#openCustomers" style="-fx-font-size: 18pt; -fx-background-color: #ff99c2; -fx-text-fill: #330033; -fx-padding: 15px 30px; -fx-background-radius: 20;" />
+    <Button fx:id="ordersButton" text="Orders" onAction="#openOrders" style="-fx-font-size: 18pt; -fx-background-color: #ffd699; -fx-text-fill: #663300; -fx-padding: 15px 30px; -fx-background-radius: 20;" />
+    <Button fx:id="productsButton" text="Products" onAction="#openProducts" style="-fx-font-size: 18pt; -fx-background-color: #c2f0c2; -fx-text-fill: #003300; -fx-padding: 15px 30px; -fx-background-radius: 20;" />
+    <Button fx:id="logoutButton" text="Logout" onAction="#logout" style="-fx-font-size: 18pt; -fx-background-color: #ff6666; -fx-text-fill: #9900000; -fx-padding: 15px 30px; -fx-background-radius: 20;" />
+</VBox>

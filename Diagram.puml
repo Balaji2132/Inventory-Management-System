@@ -1,0 +1,150 @@
+@startuml
+class Main
+class DatabaseConnector
+class Customer
+class CustomersController {
+  +initialize()
+  +setupTable()
+  +fetchDataFromDatabase(tableName: String)
+  +showCustomerDetails(customer: Customer)
+  +clearFields()
+  +addCustomer()
+  +validateInput(customerName: String, email: String, phoneNumber: String): boolean
+  +insertCustomerIntoDatabase(customerName: String, email: String, phoneNumber: String)
+  +deleteCustomer()
+  +deleteCustomerFromDatabase(customer: Customer)
+  +goBackToHome()
+}
+
+class HomeController {
+  +initialize()
+  +applyDropShadow(button: Button)
+  +openRawMaterials()
+  +openCustomers()
+  +openOrders()
+  +openProducts()
+  +displayMessage(title: String, content: String)
+  +openChangePasswordDialog()
+  +logout()
+  +openPage(fxmlFile: String, title: String)
+}
+
+class LoginController {
+  +loginButtonAction()
+  +displayError(title: String, content: String)
+}
+
+class Order
+class OrdersController {
+  +initialize()
+  +setupTable()
+  +fetchDataFromDatabase(tableName: String)
+  +showOrderDetails(order: Order)
+  +clearFields()
+  +addOrder()
+  +validateInput(customerId: int, orderDate: String, totalAmount: double): boolean
+  +insertOrderIntoDatabase(customerId: int, orderDate: String, totalAmount: double)
+  +deleteOrder()
+  +deleteOrderFromDatabase(order: Order)
+  +goBackToHome()
+}
+
+class Product
+class ProductsController {
+  +initialize()
+  +setupTable()
+  +fetchDataFromDatabase(tableName: String)
+  +showProductDetails(product: Product)
+  +clearFields()
+  +addProduct()
+  +validateInput(productName: String, description: String, unitPrice: double): boolean
+  +insertProductIntoDatabase(productName: String, description: String, unitPrice: double)
+  +deleteProduct()
+  +deleteProductFromDatabase(product: Product)
+  +goBackToHome()
+}
+
+class RawMaterial
+class RawMaterialsController {
+  +initialize()
+  +setupTable()
+  +fetchDataFromDatabase(tableName: String)
+  +showRawMaterialDetails(rawMaterial: RawMaterial)
+  +clearFields()
+  +addRawMaterial()
+  +validateInput(materialName: String, quantity: int, unitPrice: double): boolean
+  +insertRawMaterialIntoDatabase(materialName: String, quantity: int, unitPrice: double)
+  +deleteRawMaterial()
+  +deleteRawMaterialFromDatabase(rawMaterial: RawMaterial)
+  +goBackToHome()
+}
+
+class User
+class UserDAO
+
+Main --|> CustomersController
+Main --|> HomeController
+Main --|> LoginController
+Main --|> OrdersController
+Main --|> ProductsController
+Main --|> RawMaterialsController
+
+CustomersController --> Customer
+CustomersController --> DatabaseConnector
+
+OrdersController --> Order
+OrdersController --> DatabaseConnector
+
+ProductsController --> Product
+ProductsController --> DatabaseConnector
+
+RawMaterialsController --> RawMaterial
+RawMaterialsController --> DatabaseConnector
+
+DatabaseConnector --|> Connection
+
+HomeController -- Main
+LoginController -- Main
+OrdersController -- Main
+ProductsController -- Main
+RawMaterialsController -- Main
+
+class Home.fxml
+class Customers.fxml
+class Orders.fxml
+class Products.fxml
+class RawMaterials.fxml
+
+Home.fxml -- HomeController
+Customers.fxml -- CustomersController
+Orders.fxml -- OrdersController
+Products.fxml -- ProductsController
+RawMaterials.fxml -- RawMaterialsController
+
+class TableView
+class TableColumn
+class TextField
+class Button
+
+CustomersController --> TableView
+CustomersController --> TableColumn
+CustomersController --> TextField
+CustomersController --> Button
+OrdersController --> TableView
+OrdersController --> TableColumn
+OrdersController --> TextField
+OrdersController --> Button
+ProductsController --> TableView
+ProductsController --> TableColumn
+ProductsController --> TextField
+ProductsController --> Button
+RawMaterialsController --> TableView
+RawMaterialsController --> TableColumn
+RawMaterialsController --> TextField
+RawMaterialsController --> Button
+
+DatabaseConnector --|> Connection
+
+UserDAO --> User
+
+@enduml
